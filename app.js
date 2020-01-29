@@ -96,6 +96,13 @@ function handleCM(event){
 
 function handleSaveClick(){
     
+    const image  = canvas.toDataURL();
+    const link = document.createElement("a");
+
+    link.href = image;
+    link.download = "PaintJS[A]";
+    console.log(link);
+    link.click();
 }
 
 
@@ -119,6 +126,6 @@ if(mode) {
     mode.addEventListener("click", handleModeChange);
 }
 
-if(save) {
+if(saveBtn) {
     saveBtn.addEventListener("click", handleSaveClick);
 }
